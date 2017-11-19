@@ -8,18 +8,23 @@ app.use(bodyParser.json());
 
 require("./routing/htmlRoutes.js")(app);
 require("./routing/apiRoutes.js")(app);
+var friends = require("./data/friends.js");
 
 // app.get("/home", function(req, res) {
 //   res.sendFile(path.join(__dirname, "./public/home.html"))
 // })
 
-// app.get("/survey", function(req, res) {
-//   res.sendFile(path.join(__dirname, "./public/survey.html"))
-// })
+app.post("/api/friends", function(req, res) {
+  var newFriend = req.body;
+  console.log("Friend data", newFriend);
+  friends.push(newFriend);
+  console.log("All Friends", friends);
+  res.json(newFriend);
+  // newFriend.name = newFriend.name.replace(/\s+/g, "").toLowerCase();
+  // newFriend.photo = newFriend.photo.replace(/\s+/g, "").toLowerCase();
 
-// app.get("/api/friends", function(req, res) {
-//   res.json(friends);
-// })
+
+})
 
 app.listen(PORT, function() {
   console.log("App listening on PORT " + PORT);
