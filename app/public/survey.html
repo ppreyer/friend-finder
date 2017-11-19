@@ -15,15 +15,22 @@
     </h3>
     <h4>Name (required)</h4>
     <div class="input-group">
-    <input type="text" class="form-control" placeholder="" aria-describedby="     basic-addon1">
+    <input type="text" class="form-control" id="name" placeholder="" aria-describedby="     basic-addon1">
     </div>
     <h4>Link to Photo Image (Required)</h4>
     <div class="input-group">
-    <input type="text" class="form-control" placeholder="" aria-describedby="     basic-addon1">
+    <input type="text" class="form-control" id="image" placeholder="" aria-describedby="     basic-addon1">
     </div>
     <h3>
       <strong>Question 1</strong>
     </h3>
+    <select class="form-control" id="one">
+      <option value="one">1 (Strongly Disagree)</option>
+      <option value="two">2</option>
+      <option value="three">3</option>
+      <option value="four">4</option>
+      <option value="five">5 (Strongly Agree)</option>
+    </select>
     <h4>
       Your mind is always buzzing with unexplored ideas and plans.
     </h4>
@@ -33,7 +40,7 @@
     <h4>
       Generally speaking, you rely more on your experience than your imagination.
     </h4>
-      <select class="form-control">
+      <select class="form-control" id="two">
       <option value="one">1 (Strongly Disagree)</option>
       <option value="two">2</option>
       <option value="three">3</option>
@@ -43,7 +50,7 @@
     <h3>
       <strong>Question 3</strong>
     </h3>
-    <select class="form-control">
+    <select class="form-control" id="three">
       <option value="one">1 (Strongly Disagree)</option>
       <option value="two">2</option>
       <option value="three">3</option>
@@ -55,7 +62,7 @@
     </h4>
     <h3>
       <strong>Question 4</strong>
-      <select class="form-control">
+      <select class="form-control" id="four">
       <option value="one">1 (Strongly Disagree)</option>
       <option value="two">2</option>
       <option value="three">3</option>
@@ -68,7 +75,7 @@
     </h4>
     <h3>
       <strong>Question 5</strong>
-      <select class="form-control">
+      <select class="form-control" id="five">
       <option value="one">1 (Strongly Disagree)</option>
       <option value="two">2</option>
       <option value="three">3</option>
@@ -81,7 +88,7 @@
     </h4>
     <h3>
       <strong>Question 6</strong>
-      <select class="form-control">
+      <select class="form-control" id="six">
       <option value="one">1 (Strongly Disagree)</option>
       <option value="two">2</option>
       <option value="three">3</option>
@@ -94,7 +101,7 @@
     </h4>
     <h3>
       <strong>Question 7</strong>
-      <select class="form-control">
+      <select class="form-control" id="seven">
       <option value="one">1 (Strongly Disagree)</option>
       <option value="two">2</option>
       <option value="three">3</option>
@@ -107,7 +114,7 @@
     </h4>
     <h3>
       <strong>Question 8</strong>
-      <select class="form-control">
+      <select class="form-control" id="eight">
       <option value="one">1 (Strongly Disagree)</option>
       <option value="two">2</option>
       <option value="three">3</option>
@@ -120,7 +127,7 @@
     </h4>
     <h3>
       <strong>Question 9</strong>
-      <select class="form-control">
+      <select class="form-control" id="nine">
       <option value="one">1 (Strongly Disagree)</option>
       <option value="two">2</option>
       <option value="three">3</option>
@@ -133,7 +140,7 @@
     </h4>
     <h3>
       <strong>Question 10</strong>
-      <select class="form-control">
+      <select class="form-control" id="ten">
       <option value="one">1 (Strongly Disagree)</option>
       <option value="two">2</option>
       <option value="three">3</option>
@@ -144,6 +151,34 @@
     <h4>
       You feel more energetic after spending time with a group of people.
     </h4>
+    <button type="submit" class="btn btn-primary" id="add-survey">Primary</button>
+    
   </div>
+  <script type="text/javascript">
+    $("#add-survey").on("click", function(event) {
+  event.preventDefault();
+
+var newSurvey = {
+  name: $("#name").val().trim(),
+  photo: $("#image").val().trim(),
+  scores: [
+            $("#one").val().trim(),
+            $("#two").val().trim(),
+            $("#three").val().trim(),
+            $("#four").val().trim(),
+            $("#five").val().trim(),
+            $("#six").val().trim(),
+            $("#seven").val().trim(),
+            $("#eight").val().trim(),
+            $("#nine").val().trim(),
+            $("#ten").val().trim()
+          ]
+}
+
+$.post("/api/friends", newSurvey).done(function(data) {
+})
+
+})
+  </script>
 </body>
 </html>
