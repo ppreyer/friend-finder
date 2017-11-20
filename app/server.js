@@ -23,54 +23,65 @@ app.post("/api/friends", function(req, res) {
   surveyResults.photo = surveyResults.photo.replace(/\s+/g, "").toLowerCase();
   console.log(surveyResults.photo);
   // surveyResults.scores = parseInt(surveyResults.scores[0].replace(/\s+/g, ""));
-  console.log(surveyResults.scores[0]);
-  var newFriend = res.json(surveyResults);
-  for(var i = 0; i < newFriend.scores.length; i++) {
-    newFriend.scores[i] = parseInt(newFriend.scores[i].replace(/\s+/g, ""));
-  }
-  // console.log("Scores", surveyResults.scores);
-  // friends.push(surveyResults);
-  // console.log("friends array", friends);
+  // console.log(surveyResults.scores[0]);
   // var newFriend = res.json(surveyResults);
-  // Iterate through each friend's scores and compare scores to newFriend's scores
-  // If highest score then match users as 'best friends'
+  // for(var i = 0; i < surveyResults['scores[]'].length; i++) {
+  //   surveyResults['scores[]'][i] = parseInt(surveyResults['scores[]'][i]);
+  // }
+  convertStringToInt(surveyResults['scores[]']);
+
+  var newUserScores = surveyResults['scores[]'];
+  var matchName = '';
+  var matchImage = '';
+  var totalDifference = 10000;
+
+
+    for (var i = 0; i < friends.length; i++) {
+      var diff = 0;
+
+      for (var j = 0; j < friends[i].scores.length; j++) {
+        diff += Math.abs(friends[i].scores[j] - newUserScores[j]);
+      }
+      if (diff < totalDifference) {
+
+        totalDifference = diff;
+        matchName = friends[i].name;
+        matchImage = friends[i].photo;
+      }
+    }
+    console.log(totalDifference);
+
+    // Add new user
+    // friends.push(userInput);
+
+    // Send appropriate response
+    // res.json({status: 'OK', matchName: matchName, matchImage: matchImage});
+
+  // console.log("All Scores", surveyResults['scores[]']);
+  // var officialMatchScore = 1000;
   // var scoreDifference = 0;
-  // for(var i = 0; i < friends[0].scores.length; i++) {
-  //   var matchFriendScore = friends[0].scores[i];
-  //   var newFriendScore = newFriend.scores[i];
-  //   console.log("Ahmed's scores", matchFriendScore);
-  //   console.log("Embiid's scores", newFriendScore);
-    // if(parseInt(newFriend.scores[i] !== parseInt(matchFriendScore))) {
-    //  var scoreCompute = Math.abs(parseInt(newFriendScore) - parseInt(matchFriendScore));
-    //  scoreDifference += scoreCompute;
+  // for(var j = 0; j < friends.length; j++) {
+  //   var scoreDifference = 0;
+    // for(var k = 0; k < friends[0].scores.length; k++) {
+    //     scoreDifference += Math.abs(surveyResults['scores[]'][k] - friends[0].scores[k]);
     // }
-  // console.log("Total Score", scoreDifference);
-  // return scoreDifference
+    // console.log(scoreDifference);
+  });
+  //     } if(scoreDifference < officialMatchScore) {
+  //         officialMatchScore = scoreDifference;
+  //       }
+  //   }
+  // }
+//   console.log("Score", officialMatchScore);
+//   return officialMatchScore;
+// })
+// surveyResults['scores[]']
 
-})
-
-// function matchNewFriendWithBestFriend(surveyResults) {
-//   for(var i = i < friends[0].length; i++) {
-//     if()
-//   }
-// }
-
-// // Determine the user's most compatible friend using the following as a guide:
-// // Convert each user's results into a simple array of numbers (ex: [5, 1, 4, 4, 5, 1, 2, 5, 4, 1]).
-// // With that done, compare the difference between current user's scores against 
-// those from other users, question by question. 
-// Add up the differences to calculate the  totalDifference.
-// // Example:
-// // User 1: [5, 1, 4, 4, 5, 1, 2, 5, 4, 1]
-// // User 2: [3, 2, 6, 4, 5, 1, 2, 5, 4, 1]
-// // Total Difference: 2 + 1 + 2 = 5
-// // Remember to use the absolute value of the differences. Put another way: 
-// no negative solutions! Your app should calculate both 5-3 and 3-5 as 2, and so on.
-// // The closest match will be the user with the least amount of difference.
-// // Once you've found the current user's most compatible friend, display the 
-// result as a modal pop-up.
-// // The modal should display both the name and picture of the closest match.
-
+function convertStringToInt(surveyResults) {
+    for(var i = 0; i < surveyResults.length; i++) {
+    surveyResults[i] = parseInt(surveyResults[i]);
+  }
+}
 
 app.listen(PORT, function() {
   console.log("App listening on PORT " + PORT);
