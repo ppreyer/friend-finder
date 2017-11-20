@@ -16,10 +16,10 @@ var newSurvey = {
             $("#eight").val().trim(),
             $("#nine").val().trim(),
             $("#ten").val().trim()
-          ]
+          ],
 }
 
-console.log(newSurvey);
+// console.log(newSurvey);
 
 $.post("/api/friends", newSurvey).done(function(data) {
   console.log("new friend added", data);
