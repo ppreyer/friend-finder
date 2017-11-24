@@ -2,7 +2,7 @@
   "name": "friend-finder-app",
   "version": "1.0.0",
   "description": "An app to discover new friends.",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
