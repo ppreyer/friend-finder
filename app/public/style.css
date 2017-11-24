@@ -1,0 +1,30 @@
+#survey {
+  padding: 5px;
+}
+/*
+body {
+  background-image: url("circles-light.png") ;
+}*/
+
+.container-survey {
+  padding: 15px;
+  margin: 10px;
+}
+
+.jumbotron {
+    position: relative;
+    background: #000 url("kite.jpg") center center;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.form-control,
+.input-group {
+  width: 25%;
+}
+
+.place {
+  font-style: italic;
+}
