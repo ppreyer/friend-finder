@@ -3,28 +3,34 @@
   <title>
     Friend Finder
   </title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
 <body>
-  <div class="container">
+  <div class="container-survey">
     <h2>Survey Questions</h2>
+    <hr class="my-4">
     <h3>
       <strong>About You</strong>
     </h3>
     <h4>Name (required)</h4>
     <div class="input-group">
-    <input type="text" class="form-control" id="name" placeholder="" aria-describedby="     basic-addon1">
+    <input type="text" class="form-control" id="name" placeholder="First and Last Name" aria-describedby="     basic-addon1">
     </div>
     <h4>Link to Photo Image (Required)</h4>
     <div class="input-group">
-    <input type="text" class="form-control" id="image" placeholder="" aria-describedby="     basic-addon1">
+    <input type="text" class="form-control" id="image" placeholder="www.yourbestphoto.com" aria-describedby="     basic-addon1">
     </div>
     <h3>
       <strong>Question 1</strong>
     </h3>
     <select class="form-control" id="one">
+      <option class="place"> -- Select a response --</option>
       <option value="1">1 (Strongly Disagree)</option>
       <option value="2">2</option>
       <option value="3">3</option>
@@ -41,6 +47,7 @@
       Generally speaking, you rely more on your experience than your imagination.
     </h4>
     <select class="form-control" id="two">
+      <option class="place"> -- Select a response --</option>
       <option value="1">1 (Strongly Disagree)</option>
       <option value="2">2</option>
       <option value="3">3</option>
@@ -51,6 +58,7 @@
       <strong>Question 3</strong>
     </h3>
     <select class="form-control" id="three">
+      <option class="place"> -- Select a response --</option>
       <option value="1">1 (Strongly Disagree)</option>
       <option value="2">2</option>
       <option value="3">3</option>
@@ -63,6 +71,7 @@
     <h3>
       <strong>Question 4</strong>
     <select class="form-control" id="four">
+      <option class="place"> -- Select a response --</option>
       <option value="1">1 (Strongly Disagree)</option>
       <option value="2">2</option>
       <option value="3">3</option>
@@ -76,6 +85,7 @@
     <h3>
       <strong>Question 5</strong>
     <select class="form-control" id="five">
+      <option class="place"> -- Select a response --</option>
       <option value="1">1 (Strongly Disagree)</option>
       <option value="2">2</option>
       <option value="3">3</option>
@@ -89,6 +99,7 @@
     <h3>
       <strong>Question 6</strong>
       <select class="form-control" id="six">
+      <option class="place"> -- Select a response --</option>
       <option value="1">1 (Strongly Disagree)</option>
       <option value="2">2</option>
       <option value="3">3</option>
@@ -102,6 +113,7 @@
     <h3>
       <strong>Question 7</strong>
     <select class="form-control" id="seven">
+      <option class="place"> -- Select a response --</option>
       <option value="1">1 (Strongly Disagree)</option>
       <option value="2">2</option>
       <option value="3">3</option>
@@ -115,6 +127,7 @@
     <h3>
       <strong>Question 8</strong>
     <select class="form-control" id="eight">
+      <option class="place"> -- Select a response --</option>
       <option value="1">1 (Strongly Disagree)</option>
       <option value="2">2</option>
       <option value="3">3</option>
@@ -128,6 +141,7 @@
     <h3>
       <strong>Question 9</strong>
     <select class="form-control" id="nine">
+      <option class="place"> -- Select a response --</option>
       <option value="1">1 (Strongly Disagree)</option>
       <option value="2">2</option>
       <option value="3">3</option>
@@ -141,6 +155,7 @@
     <h3>
       <strong>Question 10</strong>
     <select class="form-control" id="ten">
+      <option class="place"> -- Select a response --</option>
       <option value="1">1 (Strongly Disagree)</option>
       <option value="2">2</option>
       <option value="3">3</option>
@@ -151,9 +166,31 @@
     <h4>
       You feel more energetic after spending time with a group of people.
     </h4>
-    <button type="submit" class="btn btn-primary" id="add-survey">Primary</button>
-    
+    <button type="submit" class="btn btn-primary" id="add-survey">Find a Match</button>
+<!--     <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal" id="add-survey">Primary</button> -->
   </div>
+<!-- Modal -->
+  <div id="resultsModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h2 class="modal-title"><strong>Best Match</strong></h2>
+        </div>
+        <div class="modal-body">
+          <h2 id="matchName"></h2>
+<!--           <img id="matchImg" src="file:///Users/lisavanorden/Documents/RCB_files/week13_files/wk13_hw/friendfinder/assets/images/floya_avatar_pic.jpg" alt=""> -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
   <script type="text/javascript">
     $("#add-survey").on("click", function(event) {
   event.preventDefault();
@@ -177,10 +214,20 @@ var newSurvey = {
 
 
 $.post("/api/friends", newSurvey).done(function(data) {
-console.log(data.newSurvey);
-})
+// console.log(data.newSurvey);
+          $("#matchName").text(data.matchName);
+          $('#matchImg').attr("src", data.matchImage);
+          // Show the modal with the best match 
+          $("#resultsModal").modal('toggle');
+});
 
 })
+
+// // var currentURL = window.location.origin;
+// $.ajax({ url: currentURL + "/survey"}).done(function(matchData) {
+//   console.log(matchData);
+// })
+
   </script>
 </body>
 </html>

@@ -29,6 +29,7 @@ app.post("/api/friends", function(req, res) {
   //   surveyResults['scores[]'][i] = parseInt(surveyResults['scores[]'][i]);
   // }
   convertStringToInt(surveyResults['scores[]']);
+  console.log("NUMBER ARRAY", surveyResults['scores[]']);
 
   var newUserScores = surveyResults['scores[]'];
   var matchName = '';
@@ -49,33 +50,15 @@ app.post("/api/friends", function(req, res) {
         matchImage = friends[i].photo;
       }
     }
-    console.log(totalDifference);
+    
+    friends.push(surveyResults);
 
-    // Add new user
-    // friends.push(userInput);
+    console.log(totalDifference, matchName);
+    res.json({status: 'OK', matchName: matchName, matchImage: matchImage});
 
-    // Send appropriate response
-    // res.json({status: 'OK', matchName: matchName, matchImage: matchImage});
 
-  // console.log("All Scores", surveyResults['scores[]']);
-  // var officialMatchScore = 1000;
-  // var scoreDifference = 0;
-  // for(var j = 0; j < friends.length; j++) {
-  //   var scoreDifference = 0;
-    // for(var k = 0; k < friends[0].scores.length; k++) {
-    //     scoreDifference += Math.abs(surveyResults['scores[]'][k] - friends[0].scores[k]);
-    // }
-    // console.log(scoreDifference);
   });
-  //     } if(scoreDifference < officialMatchScore) {
-  //         officialMatchScore = scoreDifference;
-  //       }
-  //   }
-  // }
-//   console.log("Score", officialMatchScore);
-//   return officialMatchScore;
-// })
-// surveyResults['scores[]']
+
 
 function convertStringToInt(surveyResults) {
     for(var i = 0; i < surveyResults.length; i++) {
