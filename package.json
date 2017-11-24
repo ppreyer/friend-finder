@@ -4,7 +4,7 @@
   "description": "An app to discover new friends.",
   "main": "server.js",
   "scripts": {
-    "start": "node app/server.js",
+    "start": "node ./app/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Parker Preyer",
