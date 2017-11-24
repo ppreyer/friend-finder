@@ -5,6 +5,7 @@ var app = express();
 var PORT = process.env.PORT || 8080;
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(express.static('public'));
 
 require("./routing/htmlRoutes.js")(app);
 require("./routing/apiRoutes.js")(app);
