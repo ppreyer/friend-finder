@@ -3,7 +3,7 @@ var path = require("path");
 var bodyParser = require("body-parser");
 var app = express();
 var PORT = process.env.PORT || 8080;
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -29,10 +29,10 @@ app.post("/api/friends", function(req, res) {
   // for(var i = 0; i < surveyResults['scores[]'].length; i++) {
   //   surveyResults['scores[]'][i] = parseInt(surveyResults['scores[]'][i]);
   // }
-  convertStringToInt(surveyResults['scores[]']);
-  console.log("NUMBER ARRAY", surveyResults['scores[]']);
+  convertStringToInt(surveyResults.scores);
+  console.log("NUMBER ARRAY", surveyResults.scores);
 
-  var newUserScores = surveyResults['scores[]'];
+  var newUserScores = surveyResults.scores;
   var matchName = '';
   var matchImage = '';
   var totalDifference = 10000;

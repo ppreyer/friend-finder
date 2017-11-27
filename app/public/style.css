@@ -19,6 +19,10 @@ body {
   margin-right: 5px;
 }
 
+#close {
+  text-decoration:  none;
+}
+
 .jumbotron {
     position: relative;
     background: #000 url("kite.jpg") center center;
