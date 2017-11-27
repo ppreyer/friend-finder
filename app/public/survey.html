@@ -7,168 +7,195 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="style.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
 <body>
-  <div class="container-survey">
-    <h2>Survey Questions</h2>
-    <hr class="my-4">
-    <h3>
-      <strong>About You</strong>
-    </h3>
-    <h4>Name (required)</h4>
-    <div class="input-group">
-    <input type="text" class="form-control" id="name" placeholder="First and Last Name" aria-describedby="     basic-addon1">
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="./home">
+          <p class="home"><i class="fa fa-address-card-o" id="card" aria-hidden="true"></i>Home</p>
+
+      </a>
     </div>
-    <h4>Link to Photo Image (Required)</h4>
-    <div class="input-group">
-    <input type="text" class="form-control" id="image" placeholder="www.yourbestphoto.com" aria-describedby="     basic-addon1">
-    </div>
-    <h3>
-      <strong>Question 1</strong>
-    </h3>
-    <select class="form-control" id="one">
-      <option class="place"> -- Select a response --</option>
-      <option value="1">1 (Strongly Disagree)</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5 (Strongly Agree)</option>
-    </select>
-    <h4>
-      Your mind is always buzzing with unexplored ideas and plans.
-    </h4>
-    <h3>
-      <strong>Question 2</strong>
-    </h3>
-    <h4>
-      Generally speaking, you rely more on your experience than your imagination.
-    </h4>
-    <select class="form-control" id="two">
-      <option class="place"> -- Select a response --</option>
-      <option value="1">1 (Strongly Disagree)</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5 (Strongly Agree)</option>
-    </select>
-    <h3>
-      <strong>Question 3</strong>
-    </h3>
-    <select class="form-control" id="three">
-      <option class="place"> -- Select a response --</option>
-      <option value="1">1 (Strongly Disagree)</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5 (Strongly Agree)</option>
-    </select>
-    <h4>
-      You find it easy to stay relaxed and focused even when there is some pressure.
-    </h4>
-    <h3>
-      <strong>Question 4</strong>
-    <select class="form-control" id="four">
-      <option class="place"> -- Select a response --</option>
-      <option value="1">1 (Strongly Disagree)</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5 (Strongly Agree)</option>
-    </select>
-    </h3>
-    <h4>
-      You rarely do something just out of sheer curiosity.
-    </h4>
-    <h3>
-      <strong>Question 5</strong>
-    <select class="form-control" id="five">
-      <option class="place"> -- Select a response --</option>
-      <option value="1">1 (Strongly Disagree)</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5 (Strongly Agree)</option>
-    </select>
-    </h3>
-    <h4>
-      People can rarely upset you.
-    </h4>
-    <h3>
-      <strong>Question 6</strong>
-      <select class="form-control" id="six">
-      <option class="place"> -- Select a response --</option>
-      <option value="1">1 (Strongly Disagree)</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5 (Strongly Agree)</option>
-    </select>
-    </h3>
-    <h4>
-      It is often difficult for you to relate to other people's feelings.
-    </h4>
-    <h3>
-      <strong>Question 7</strong>
-    <select class="form-control" id="seven">
-      <option class="place"> -- Select a response --</option>
-      <option value="1">1 (Strongly Disagree)</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5 (Strongly Agree)</option>
-    </select>
-    </h3>
-    <h4>
-      In a discussion, truth should be more important than people’s sensitivities.
-    </h4>
-    <h3>
-      <strong>Question 8</strong>
-    <select class="form-control" id="eight">
-      <option class="place"> -- Select a response --</option>
-      <option value="1">1 (Strongly Disagree)</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5 (Strongly Agree)</option>
-    </select>
-    </h3>
-    <h4>
-      You rarely get carried away by fantasies and ideas.
-    </h4>
-    <h3>
-      <strong>Question 9</strong>
-    <select class="form-control" id="nine">
-      <option class="place"> -- Select a response --</option>
-      <option value="1">1 (Strongly Disagree)</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5 (Strongly Agree)</option>
-    </select>
-    </h3>
-    <h4>
-      You think that everyone’s views should be respected regardless of whether they are supported by facts or not.
-    </h4>
-    <h3>
-      <strong>Question 10</strong>
-    <select class="form-control" id="ten">
-      <option class="place"> -- Select a response --</option>
-      <option value="1">1 (Strongly Disagree)</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5 (Strongly Agree)</option>
-    </select>
-    </h3>
-    <h4>
-      You feel more energetic after spending time with a group of people.
-    </h4>
-    <button type="submit" class="btn btn-primary" id="add-survey">Find a Match</button>
-<!--     <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal" id="add-survey">Primary</button> -->
   </div>
+</nav>
+
+<div class="row survey">
+  <div class="col-md-9">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Survey Questions</h3>
+      </div>
+      <div class="panel-body">
+        <strong>About You</strong>
+        <div class="row about">
+          <div class="col-md-5">
+            <strong>Name</strong>
+            <div class="input-group">
+              <input type="text" class="form-control" id="name" placeholder="First and Last Name"   aria-describedby="     basic-addon1">
+            </div>
+          </div>
+          <div class="col-md-5">
+            <strong>Link to Photo<strong>
+            <div class="input-group">
+              <input type="text" class="form-control" id="image" placeholder="www.yourbestphoto.com" aria-describedby="     basic-addon1">
+            </div>
+          </div>
+        </div>
+      <div class="row questions">
+        <div class="col-md-10">
+          <strong>Question 1</strong>
+          <h5>
+             Your mind is always buzzing with unexplored ideas and plans.
+         </h5>
+            <select class="form-control question" id="one">
+              <option class="place"> -- Select a response --</option>
+              <option value="1">1 (Strongly Disagree)</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5 (Strongly Agree)</option>
+            </select>
+        </div>
+        <div class="col-md-10">
+          <strong>Question 2</strong>
+          <h5>
+             Generally speaking, you rely more on your experience than your imagination.
+         </h5>
+            <select class="form-control question" id="two">
+              <option class="place"> -- Select a response --</option>
+              <option value="1">1 (Strongly Disagree)</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5 (Strongly Agree)</option>
+            </select>
+        </div>
+        <div class="col-md-10">
+          <strong>Question 3</strong>
+          <h5>
+             You find it easy to stay relaxed and focused even when there is some pressure.
+         </h5>
+            <select class="form-control question" id="three">
+              <option class="place"> -- Select a response --</option>
+              <option value="1">1 (Strongly Disagree)</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5 (Strongly Agree)</option>
+            </select>
+        </div>
+        <div class="col-md-10">
+          <strong>Question 4</strong>
+          <h5>
+            You rarely do something just out of sheer curiosity.
+         </h5>
+            <select class="form-control question" id="four">
+              <option class="place"> -- Select a response --</option>
+              <option value="1">1 (Strongly Disagree)</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5 (Strongly Agree)</option>
+            </select>
+        </div>
+        <div class="col-md-10">
+          <strong>Question 5</strong>
+          <h5>
+             People can rarely upset you.
+         </h5>
+            <select class="form-control question" id="five">
+              <option class="place"> -- Select a response --</option>
+              <option value="1">1 (Strongly Disagree)</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5 (Strongly Agree)</option>
+            </select>
+        </div>
+        <div class="col-md-10">
+          <strong>Question 6</strong>
+          <h5>
+             It is often difficult for you to relate to other people's feelings.
+         </h5>
+            <select class="form-control question" id="six">
+              <option class="place"> -- Select a response --</option>
+              <option value="1">1 (Strongly Disagree)</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5 (Strongly Agree)</option>
+            </select>
+        </div>
+        <div class="col-md-10">
+          <strong>Question 7</strong>
+          <h5>
+             In a discussion, truth should be more important than people’s sensitivities.
+         </h5>
+            <select class="form-control question" id="seven">
+              <option class="place"> -- Select a response --</option>
+              <option value="1">1 (Strongly Disagree)</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5 (Strongly Agree)</option>
+            </select>
+        </div>
+        <div class="col-md-10">
+          <strong>Question 8</strong>
+          <h5>
+             You rarely get carried away by fantasies and ideas.
+         </h5>
+            <select class="form-control question" id="eight">
+              <option class="place"> -- Select a response --</option>
+              <option value="1">1 (Strongly Disagree)</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5 (Strongly Agree)</option>
+            </select>
+        </div>
+        <div class="col-md-10">
+          <strong>Question 9</strong>
+          <h5>
+              You think that everyone’s views should be respected regardless of whether they are supported by facts or not.
+         </h5>
+            <select class="form-control question" id="nine">
+              <option class="place"> -- Select a response --</option>
+              <option value="1">1 (Strongly Disagree)</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5 (Strongly Agree)</option>
+            </select>
+        </div>
+        <div class="col-md-10">
+          <strong>Question 10</strong>
+          <h5>
+             You feel more energetic after spending time with a group of people.
+         </h5>
+            <select class="form-control question" id="ten">
+              <option class="place"> -- Select a response --</option>
+              <option value="1">1 (Strongly Disagree)</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5 (Strongly Agree)</option>
+            </select>
+        </div>
+
+      </div>
+      <button type="submit" class="btn btn-primary" id="add-survey">Find a Match</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
 <!-- Modal -->
   <div id="resultsModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
@@ -229,5 +256,12 @@ $.post("/api/friends", newSurvey).done(function(data) {
 // })
 
   </script>
+  <footer class="footer-basic-centered">
+  <p class="footer-company-motto">Friend Finder <i class="fa fa-address-card-o" aria-hidden="true"></i></p>
+  <p class="footer-links">
+    <a href="https://github.com/ppreyer/friend-finder" alt="Github Repo">Github <i class="fa fa-github" aria-hidden="true"></i></a> 
+  </p>
+  <p class="footer-company-name">Parker Preyer © 2017</p>
+</footer>
 </body>
 </html>
