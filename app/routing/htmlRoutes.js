@@ -1,3 +1,5 @@
+// File to display html files for user
+
 var path = require("path");
 
 module.exports = function(app) {
@@ -10,4 +12,3 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/survey.html"));
   })
 }
-
