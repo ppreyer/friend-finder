@@ -9,3 +9,15 @@ Friend Finder application is meant to simulate a simple dating app. The applicat
 ## Heroku demo
 
 Friend Finder is deployed to Heroku. Please check it out in action: https://polar-brushlands-23856.herokuapp.com/home
+
+## Contributors:
+
+Parker Preyer GitHub
+
+## Technologies Used:
+
+Javascript nodeJS expressJS npm packages: mysql path body-parser CSS: Twitter Bootstrap
+
+License
+
+Copyright 2017 UNC Coding Bootcamp - Parker Preyer
